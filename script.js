@@ -21,7 +21,7 @@ function creaRes(tab) {
   for (let option of tab) {
     document.querySelector("#resultat").innerHTML += `<div class="result">
                 <div class="textResult">${option.depart}>${option.arrive} ${option.heure} ${option.prix}</div>
-                <button class="boutonBook">Book</button>
+                <a href="./cart.html"><button class="boutonBook">Book</button></a>
               </div>`;
   }
 }
@@ -41,3 +41,12 @@ boutonSearch.addEventListener("click", function () {
 
   creaRes(resultat);
 });
+
+//si resultat et click sur book
+let boutonsbook = document.querySelectorAll(".boutonBook");
+
+for (let i = 0; i < boutonsbook.length; i++) {
+  boutonsbook[i].addEventListener("click", function () {
+    console.log("j'ai cliqué");
+  });
+}
