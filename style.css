@@ -32,6 +32,10 @@ body {
   color: #45947e;
 }
 
+#index {
+  color: #45947e;
+}
+
 #pages {
   width: 20%;
   display: flex;
@@ -39,6 +43,11 @@ body {
   justify-content: space-around;
   align-items: center;
   border: 1px solid blue;
+  color: black;
+}
+
+.page {
+  color: black;
 }
 
 /* contenu */
@@ -96,4 +105,51 @@ body {
   margin-left: 5%;
 
   background-color: white;
+}
+
+/*carthtml*/
+#contenuCart {
+  background-color: #d9dbda;
+  border: 1px solid blue;
+  grid-row-start: 2;
+  grid-row-end: 13;
+  grid-column-start: 1;
+  grid-column-end: 13;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#centreCart {
+  background-color: white;
+  border: 1px solid yellow;
+  border-radius: 2%;
+  height: 20%;
+  width: 50%;
+  align-items: center;
+}
+
+/*bookingshtml*/
+
+#contenuBook {
+  background-color: #d9dbda;
+  border: 1px solid blue;
+  grid-row-start: 2;
+  grid-row-end: 13;
+  grid-column-start: 1;
+  grid-column-end: 13;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#centreBook {
+  background-color: white;
+  border: 1px solid yellow;
+  border-radius: 2%;
+  height: 20%;
+  width: 50%;
+  align-items: center;
 }
