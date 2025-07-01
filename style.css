@@ -94,7 +94,7 @@ body {
 
 #cherche {
   /* border: 1px solid green; */
-  border-radius: 2%;
+  border-radius: 3px;
   height: 70%;
   width: 20%;
   margin-right: 5%;
@@ -111,7 +111,7 @@ body {
   height: 70%;
   background-color: #e5e8e7;
   border: 1px solid #e5e8e7;
-  border-radius: 3%;
+  border-radius: 3px;
 }
 
 /*le champ recherche depart*/
@@ -125,7 +125,7 @@ body {
   height: 10%;
   background-color: #e5e8e7;
   border: 1px solid #e5e8e7;
-  border-radius: 3%;
+  border-radius: 3px;
 }
 
 /*bouton search*/
@@ -135,28 +135,63 @@ body {
   height: 10%;
   color: white;
   border: 1px solid #45947e;
-  border-radius: 3%;
+  border-radius: 3px;
 }
 
 /*resultat*/
 #resultat {
   /* border: 1px solid purple; */
-  border-radius: 2%;
+  border-radius: 3px;
   height: 70%;
   width: 20%;
   margin-left: 5%;
   background-color: white;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: auto;
+}
+
+/*Result Default*/
+#resultDefault {
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
-/*image traint index*/
 #imgTrain {
-  height: 50%;
-  width: 55%;
+  margin-top: 20%;
+  padding-bottom: 20%;
+  height: 35%;
   border-bottom: 3px solid #45947e;
+}
+
+/*elem resultat*/
+.result {
+  border: 1px solid #d9dbda;
+  border-radius: 3px;
+  background-color: #d9dbda;
+  height: 10%;
+  width: 85%;
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+/*option resultat */
+.textResult {
+  text-align: justify;
+}
+/*bouton book*/
+.boutonBook {
+  height: 60%;
+  background-color: #45947e;
+  border: 1px solid #45947e;
+  color: white;
+  border-radius: 3%;
 }
 
 /*carthtml*/

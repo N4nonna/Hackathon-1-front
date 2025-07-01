@@ -35,14 +35,21 @@
                 type="text"
                 placeholder="Departure"
               />
-              <input class="rechercheInput" type="text" placeholder="Arrival" />
+              <input
+                id="arrival"
+                class="rechercheInput"
+                type="text"
+                placeholder="Arrival"
+              />
             </div>
             <input id="searchDate" type="date" value="2025-07-01" />
             <button id="searchBouton">Search</button>
           </div>
           <div id="resultat">
-            <img id="imgTrain" src="../images/train.png" />
-            <p>It's time to book your future trip.</p>
+            <div id="resultDefault">
+              <img id="imgTrain" src="../images/train.png" />
+              <p>It's time to book your future trip.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -50,3 +57,12 @@
     <script src="../script.js"></script>
   </body>
 </html>
+
+<!-- div avec resultat recherche
+
+            <div class="result">
+              <div class="textResult">paris>lyon 17:15 115€</div>
+              <button class="boutonBook">Book</button>
+            </div>
+
+-->
