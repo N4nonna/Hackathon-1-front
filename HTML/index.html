@@ -29,14 +29,19 @@
         <div id="boxes">
           <div id="cherche">
             <div id="villes">
-              <input type="text" placeholder="Departure" />
-              <input type="text" placeholder="Arrival" />
+              <input
+                class="rechercheInput"
+                id="departure"
+                type="text"
+                placeholder="Departure"
+              />
+              <input class="rechercheInput" type="text" placeholder="Arrival" />
             </div>
-            <input type="date" />
-            <button id="search">search</button>
+            <input id="searchDate" type="date" value="2025-07-01" />
+            <button id="searchBouton">Search</button>
           </div>
           <div id="resultat">
-            <img src="../images/train.png" />
+            <img id="imgTrain" src="../images/train.png" />
             <p>It's time to book your future trip.</p>
           </div>
         </div>

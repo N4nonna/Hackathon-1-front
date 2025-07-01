@@ -16,7 +16,7 @@ body {
 
 /* header */
 #header {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   grid-row-start: 1;
   grid-row-end: 2;
   grid-column-start: 1;
@@ -27,13 +27,15 @@ body {
 }
 
 #logo {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   display: flex;
   color: #45947e;
+  margin-left: 3%;
 }
 
 #index {
   color: #45947e;
+  text-decoration: none;
 }
 
 #pages {
@@ -42,17 +44,18 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   color: black;
 }
 
 .page {
   color: black;
+  text-decoration: none;
 }
 
 /* contenu */
 #contenu {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   grid-row-start: 2;
   grid-row-end: 13;
   grid-column-start: 1;
@@ -62,20 +65,22 @@ body {
   justify-content: flex-start;
   align-items: center;
   background-image: url("./images/background.jpg");
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #text {
   height: 15%;
   width: 100%;
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   margin: 0%;
   color: white;
+  text-align: center;
 }
 
 /* boites */
 #boxes {
-  border: 1px solid pink;
+  /* border: 1px solid white; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -85,8 +90,10 @@ body {
   margin: 0%;
 }
 
+/*recherche*/
+
 #cherche {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   border-radius: 2%;
   height: 70%;
   width: 20%;
@@ -94,17 +101,62 @@ body {
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
 }
 
+/*les 2 champs de recherche*/
+.rechercheInput {
+  width: 85%;
+  height: 70%;
+  background-color: #e5e8e7;
+  border: 1px solid #e5e8e7;
+  border-radius: 3%;
+}
+
+/*le champ recherche depart*/
+#departure {
+  border-bottom: 1px solid grey;
+}
+
+/*champ de recherche date*/
+#searchDate {
+  width: 85%;
+  height: 10%;
+  background-color: #e5e8e7;
+  border: 1px solid #e5e8e7;
+  border-radius: 3%;
+}
+
+/*bouton search*/
+#searchBouton {
+  width: 85%;
+  background-color: #45947e;
+  height: 10%;
+  color: white;
+  border: 1px solid #45947e;
+  border-radius: 3%;
+}
+
+/*resultat*/
 #resultat {
-  border: 1px solid purple;
+  /* border: 1px solid purple; */
   border-radius: 2%;
   height: 70%;
   width: 20%;
   margin-left: 5%;
-
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*image traint index*/
+#imgTrain {
+  height: 50%;
+  width: 55%;
+  border-bottom: 3px solid #45947e;
 }
 
 /*carthtml*/
