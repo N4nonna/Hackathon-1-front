@@ -16,11 +16,14 @@ function changeImg() {
               <p>No trip found.</p>`;
 }
 //creation resultat
-function creaRes(obj) {
-  document.querySelector("#resultat").innerHTML += `<div class="result">
-                <div class="textResult">${obj.depart}>${obj.arrive} 17:15 115€</div>
+function creaRes(tab) {
+  removeImg();
+  for (let option of tab) {
+    document.querySelector("#resultat").innerHTML += `<div class="result">
+                <div class="textResult">${option.depart}>${option.arrive} ${option.heure} ${option.prix}</div>
                 <button class="boutonBook">Book</button>
               </div>`;
+  }
 }
 
 //quand j'appuie sur le bouton search ajoute un element
@@ -30,6 +33,11 @@ boutonSearch.addEventListener("click", function () {
     arrive: document.querySelector("#arrival").value,
     date: document.querySelector("#searchDate").value,
   };
-  removeImg();
-  creaRes(recherche);
+
+  let resultat = [
+    { depart: "Paris", arrive: "Lyon", heure: "17:30", prix: "115€" },
+    { depart: "Paris", arrive: "Lyon", heure: "18:30", prix: "20€" },
+  ];
+
+  creaRes(resultat);
 });
