@@ -9,11 +9,37 @@
   </head>
   <body>
     <div id="conteneur">
-      <div id="header">header</div>
+      <div id="header">
+        <div id="logo">
+          <h1>TicketHack</h1>
+        </div>
+        <div id="pages">
+          <p>Cart</p>
+          <p>Bookings</p>
+        </div>
+      </div>
       <div id="contenu">
-        contenu
-        <div id="cherche"></div>
-        <div id="resultat"></div>
+        <div id="text">
+          <h2>Explore the world effortlessly by train!</h2>
+          <p>
+            Compare, book and enjoy cheap prices for train tickets: your journey
+            starts on TicketHack.
+          </p>
+        </div>
+        <div id="boxes">
+          <div id="cherche">
+            <div id="villes">
+              <input type="text" placeholder="Departure" />
+              <input type="text" placeholder="Arrival" />
+            </div>
+            <input type="date" />
+            <button id="search">search</button>
+          </div>
+          <div id="resultat">
+            <img src="../images/train.png" />
+            <p>It's time to book your future trip.</p>
+          </div>
+        </div>
       </div>
     </div>
     <script src="../script.js"></script>
