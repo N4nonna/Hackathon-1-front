@@ -40,10 +40,11 @@ function creaRes(tab) {
         <button class="boutonBook">Book</button>
       </div>`;
     // console.log(option);let recherche = {
+    actionBoutonBook(option._id);
     document.querySelector("#departure").value = "";
     document.querySelector("#arrival").value = "";
-    document.querySelector("#searchDate").value = date();
-    actionBoutonBook(option);
+    document.querySelector("#searchDate").value = null;
+    
   }
 }
 
@@ -66,7 +67,7 @@ boutonSearch.addEventListener("click", function () {
     .then((response) => response.json())
     .then((data) => {
       if (data.result === true) {
-        console.log(data.trip);
+        // console.log(data.trip);
         creaRes(data.trip);
       } else {
         changeImg();
@@ -83,7 +84,7 @@ function actionBoutonBook(id) {
       fetch("http://localhost:3000/cart", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(id),
+        body: JSON.stringify({id}),
       });
       location.replace("./cart.html");
     });

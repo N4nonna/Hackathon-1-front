@@ -263,7 +263,9 @@ body {
 .textTicket {
   /* border: 1px solid red; */
   width: 95%;
-  text-align: justify;
+  display: flex;
+  justify-content: space-around;
+  
 }
 
 .croixSuppr {
