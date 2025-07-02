@@ -323,11 +323,49 @@ body {
   background-color: white;
   /* border: 1px solid yellow; */
   border-radius: 4px;
-  height: 20%;
-  width: 50%;
+  height: 50%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
+/*avec booking*/
 
+.bookingContenair {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.displayBooking {
+  border: 1px solid #d9dbda;
+  width: 95%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  background-color: #d9dbda;
+  border-radius: 3px;
+  margin: 2px;
+}
+
+.textBooking {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 2px;
+}
+
+#enjoy {
+  height: 10%;
+  border-top: 3px solid #45947e;
+  padding: 15px;
+  color: #45947e;
+}
 /* securité
 #contenuCart {
   background-color: #d9dbda;
