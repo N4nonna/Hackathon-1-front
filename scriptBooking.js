@@ -42,19 +42,25 @@ function ajbooking(tab) {
   }
 }
 
-let test = [
-  {
-    departure: "Paris",
-    arrival: "Lyon",
-    hour: "18:45",
-    price: "110",
-  },
-  {
-    departure: "Paris",
-    arrival: "Lyon",
-    hour: "19:45",
-    price: "110",
-  },
-];
+// let test = [
+//   {
+//     departure: "Paris",
+//     arrival: "Lyon",
+//     hour: "18:45",
+//     price: "110",
+//   },
+//   {
+//     departure: "Paris",
+//     arrival: "Lyon",
+//     hour: "19:45",
+//     price: "110",
+//   },
+// ];
 
-ajbooking(test);
+// ajbooking(test);
+fetch("http://localhost:3000/bookings")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+    ajbooking(data);
+  });
