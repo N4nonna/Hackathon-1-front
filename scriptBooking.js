@@ -23,7 +23,6 @@ function changeDate(date) {
 //crea ticket train
 function ajbooking(tab) {
   creaBooking();
-
   for (let obj of tab) {
     let date = Date.now();
     // console.log(date);
@@ -57,7 +56,7 @@ function ajbooking(tab) {
 //   },
 // ];
 
-// ajbooking(test);
+ajbooking(test);
 fetch("http://localhost:3000/bookings")
   .then((response) => response.json())
   .then((data) => {
