@@ -1,4 +1,5 @@
 //index.HTML
+// var moment = require("moment");
 //bouton search
 const boutonSearch = document.querySelector("#searchBouton");
 
@@ -15,38 +16,76 @@ function changeImg() {
     <img id="imgTrain" src="../images/notfound.png" />
               <p>No trip found.</p>`;
 }
+
+function changeDate(date) {
+  let hour = moment(date).format("HH:MM");
+  return hour;
+}
+
 //creation resultat
 function creaRes(tab) {
   removeImg();
+  document.querySelector("#resultat").innerHTML = "";
+
+  document.querySelector("#resultat").setAttribute("style", "display: block");
+  document.querySelector("#resultat").setAttribute("style", "overflow:auto");
   for (let option of tab) {
-    document.querySelector("#resultat").innerHTML += `<div class="result">
-                <div class="textResult">${option.depart}>${option.arrive} ${option.heure} ${option.prix}</div>
-                <a href="./cart.html"><button class="boutonBook">Book</button></a>
-              </div>`;
+    document.querySelector("#resultat").innerHTML += `
+      <div class="result">
+        <div class="textResult">
+          ${option.departure}>${option.arrival} ${changeDate(option.date)} ${
+      option.price
+    }€
+        </div>
+        <button class="boutonBook">Book</button>
+      </div>`;
+    // console.log(option);let recherche = {
+    document.querySelector("#departure").value = "";
+    document.querySelector("#arrival").value = "";
+    document.querySelector("#searchDate").value = date();
+    actionBoutonBook(option);
   }
 }
+
+//<a href="./cart.html">
 
 //quand j'appuie sur le bouton search ajoute un element
 boutonSearch.addEventListener("click", function () {
   let recherche = {
-    depart: document.querySelector("#departure").value,
-    arrive: document.querySelector("#arrival").value,
+    departure: document.querySelector("#departure").value,
+    arrival: document.querySelector("#arrival").value,
     date: document.querySelector("#searchDate").value,
   };
+  // console.log(recherche);
 
-  let resultat = [
-    { depart: "Paris", arrive: "Lyon", heure: "17:30", prix: "115€" },
-    { depart: "Paris", arrive: "Lyon", heure: "18:30", prix: "20€" },
-  ];
-
-  creaRes(resultat);
+  fetch("http://localhost:3000/", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(recherche),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.result === true) {
+        console.log(data.trip);
+        creaRes(data.trip);
+      } else {
+        changeImg();
+      }
+    });
 });
 
 //si resultat et click sur book
-let boutonsbook = document.querySelectorAll(".boutonBook");
-
-for (let i = 0; i < boutonsbook.length; i++) {
-  boutonsbook[i].addEventListener("click", function () {
-    console.log("j'ai cliqué");
-  });
+function actionBoutonBook(id) {
+  let boutonsbook = document.querySelectorAll(".boutonBook");
+  for (let i = 0; i < boutonsbook.length; i++) {
+    boutonsbook[i].addEventListener("click", function () {
+      // console.log("j'ai cliqué");
+      fetch("http://localhost:3000/cart", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(id),
+      });
+      location.replace("./cart.html");
+    });
+  }
 }
