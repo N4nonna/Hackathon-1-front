@@ -48,9 +48,13 @@ function ajouterCart(arr) {
 function actionBoutonPurch() {
   let boutonPurch = document.querySelector("#purch");
   boutonPurch.addEventListener("click", function () {
-      console.log("j'ai cliqué");
-    fetch("http://localhost:3000/bookings")
-      location.replace("./bookings.html");
+    console.log("j'ai cliqué");
+    fetch("http://localhost:3000/bookings", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then(res => res.json())
+      .then(location.replace("./bookings.html"))
   });
 }
 
