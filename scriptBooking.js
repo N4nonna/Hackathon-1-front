@@ -55,11 +55,11 @@ function ajbooking(tab) {
 //     price: "110",
 //   },
 // ];
+// ajbooking(test);
 
-ajbooking(test);
 fetch("http://localhost:3000/bookings")
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
-    ajbooking(data);
+    if (data.result)
+      ajbooking(data.booked);
   });
